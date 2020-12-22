@@ -1,0 +1,19 @@
+<div id="unsupported-browser" class="warning large-12 columns"><span>⚠</span> Upgrade your browser to play.</div>
+
+<div class="large-12 columns">
+    <div id="game-area" data-jzt-world="{{page.path | split: '/' | last | remove: '.md' | remove : '.html'}}">
+        <div class="alert slide">
+            <div class="wrapper">
+                <div class="close">✕</div>
+                <h3 class="message"></h3>
+                <div class="score">Your Score: <span class="value"></span></div>
+                <div class="playtime">Your Play Time: <span class="value"></span></div>
+                Share your score:
+                <a href="" data-uri-template="https://www.facebook.com/sharer/sharer.php?u={url}" class="social-share facebook" target="_blank">Facebook</a>
+                <a href="" data-uri-template="https://twitter.com/home?status=I%20just%20scored%20{score}%20points%20playing%20{{page.title | uri_escape}}!%20{url}%2F%20%23JZT" class="social-share twitter" target="_blank">Twitter</a>
+                <a href="" data-uri-template="https://plus.google.com/share?url={url}" class="social-share googleplus" target="_blank">Google+</a>
+            </div>
+        </div>
+        <canvas width="800" height="640"></canvas>
+    </div>
+</div>

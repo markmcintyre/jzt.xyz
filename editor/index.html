@@ -1,0 +1,530 @@
+---
+   layout: editor
+---
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JZT</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/assets/css/jzt-editor/editor.css" />
+
+        {% if site.production %}
+            <script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-37975039-2', 'auto');
+              ga('send', 'pageview');
+
+            </script>
+        {% endif %}
+
+    </head>
+    <body>
+
+        <!-- MAIN NAVIGATION -->
+        <div class="title-bar" data-responsive-toggle="main-navigation" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">Menu</div>
+        </div>
+        <div class="top-bar" id="main-navigation">
+            <div class="top-bar-left">
+                <ul class="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown">
+                    <li class="menu-text">JZT Game World Editor</li>
+                    <li class="has-submenu">
+                        <a href="#" data-noaction>World</a>
+                        <ul class="submenu menu vertical" data-submenu>
+                            <li><a href="#" data-menu-item="new" data-noaction>New Game World</a></li>
+                            <li><a href="#" data-menu-item="open" data-open="open-dialog" data-noaction>Open Game World…</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-menu-item="download" target="_blank">Download Game World</a></li>
+                            <li><span class="advanced"><a href="#" data-menu-item="downloadjson" target="_blank">Download as JSON</a></span></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-open="world-options-dialog" data-noaction>World Options…</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" data-noaction>Board</a>
+                        <ul class="submenu menu vertical" data-submenu>
+                            <li class="board-selector"><label>Current Board</label> <select id="board-selector"></select></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-menu-item="new-board" data-open="new-board-dialog" data-noaction>Add New Board…</a></li>
+                            <li><a href="#" data-menu-item="delete-board" data-open="confirm-delete-board-dialog" data-noaction>Delete Current Board</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-open="board-options-dialog" data-noaction>Board Options…</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" data-noaction>Help</a>
+                        <ul class="submenu menu vertical" data-submenu>
+                            <li><a href="help" target="jzt-documentation">Documentation…</a></li>
+                            <li><a href="jztscript-reference" target="jzt-documentation">JZTScript Referene</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" data-open="music-dialog" data-noaction>JZT Musicbox</a></li>
+                            <li><a href="#" data-noaction>JZT Community</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li class="menu-text"><span class="advanced">Advanced Mode</span></li>
+                    <li>
+                        <div class="button-group" id="mode-selector">
+                            <a href="#" class="button active" data-mode="draw" data-noaction>Draw</a>
+                            <a href="#" class="button" data-mode="fill" data-noaction>Fill</a>
+                            <a hreg="#" class="button" data-mode="select" data-noaction>Select</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="button-group">
+                            <a href="play" class="button success" id="play">Play</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- BOARD OPTIONS -->
+        <div class="reveal large" id="board-options-dialog" data-reveal>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <h3>Board Options</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Board Name
+                    <input type="text" data-id="board-name" autofocus/>
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="row">
+
+                <div class="small-12 medium-8 columns">
+                    <label>North Board <select data-id="north"><option value="">None</option></select></label>
+                </div>
+                <div class="small-12 medium-4 columns">
+                    <label>North Offset <input type="number" data-id="north-offset" /></label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="small-12 medium-8 columns">
+                    <label>East Board <select data-id="east"><option value="">None</option></select></label>
+                </div>
+                <div class="small-12 medium-4 columns">
+                    <label>East Offset <input type="number" data-id="east-offset" /></label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="small-12 medium-8 columns">
+                    <label>South Board <select data-id="south"><option value="">None</option></select></label>
+                </div>
+                <div class="small-12 medium-4 columns">
+                    <label>South Offset <input type="number" data-id="south-offset" /></label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="small-12 medium-8 columns">
+                    <label>West Board <select data-id="west"><option value="">None</option></select></label>
+                </div>
+                <div class="small-12 medium-4 columns">
+                    <label>West Offset <input type="number" data-id="west-offset" /></label>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="small-12 medium-8 columns">
+                    <label>Maximum player bullets <small class="description">(Enter -1 for unlimited)</small>
+                    <input type="number" data-id="max-player-bullets" min="-1" max="100" />
+                    </label>
+
+                </div>
+                <div class="small-6 medium-2 columns">
+                    <label>Board is Dark</label>
+                    <div class="switch">
+                      <input type="checkbox" class="switch-input" data-id="dark" id="darkcheckbox">
+                      <label class="switch-paddle" for="darkcheckbox">
+                            <span class="show-for-sr">Board is Dark</span>
+                      </label>
+                    </div>
+                </div>
+                <div class="small-6 medium-2 columns">
+                    <label>Re-enter when hurt</label>
+                    <div class="switch">
+                          <input type="checkbox" class="switch-input" data-id="reenter" id="reentercheckbox">
+                          <label class="switch-paddle" for="reentercheckbox">
+                                <span class="show-for-sr">Re-enter when hurt</span>
+                          </label>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+        <!-- WORLD OPTIONS -->
+        <div class="reveal large" id="world-options-dialog" data-reveal>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <h3>World Options</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <label>Game Title: <input type="text" data-id="title" autofocus /></label>
+                    <label>Author: <input type="text" data-id="author"/></label>
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <label>Title Board: <select data-id="title-board"><option value="">None</option></select></label>
+                    <label>Starting Board: <select data-id="starting-board"></select></label>
+                    <label>Victory Board: <select data-id="victory-board"><option value="">None</option></select></label>
+                </div>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+        <!-- NEW BOARD -->
+        <div class="reveal large" id="new-board-dialog" data-reveal>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <h3>New Board</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>Board Name: <input type="text" data-id="name" autofocus /></label>
+                </div>
+                <div class="small-6 columns">
+                    <label>Board Width: <input type="number" min="10" max="256" data-id="width" /></label>
+                </div>
+                <div class="small-6 columns">
+                    <label>Board Height: <input type="number" min="10" max="256" data-id="height" /></label>
+                </div>
+                <div class="small-12 columns">
+                    <button type="button" class="success button" data-id="ok" data-close>OK</button>
+                </div>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+        <!-- OPEN WORLD -->
+        <div class="reveal" id="open-dialog" data-reveal>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <h3>Open Game World</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>
+                        Select Game World:
+                        <input data-id="open" type="file" data-close />
+                    </label>
+                </div>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+        <!-- CONFIRM DELETE BOARD -->
+        <div class="reveal" id="confirm-delete-board-dialog" data-reveal>
+
+            <h3>Delete Board</h3>
+            <p>Are you sure you'd like to delete this board?</p>
+
+            <a href="#" class="button" data-close>Cancel</a>
+            <a href="#" data-id="delete-button" data-close class="button alert">Delete</a>
+
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+        <!-- NEW SCRIPT -->
+        <div class="reveal large" id="new-script-dialog" data-reveal>
+
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <h3>New Script</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <label>
+                        Script Name:
+                        <input type="text" data-id="script-name" autofocus />
+                    </label>
+                </div>
+                <div class="small-12 columns">
+                    <button type="button" class="success button" data-close data-id="ok">OK</button>
+                </div>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+        <!-- MUSICBOX -->
+        <div class="reveal large" id="music-dialog" data-reveal>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <h3>JZT Musicbox</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 columns">
+                    <div class="callout primary">
+                        <div class="button-group">
+                            <a href="#" data-note="c" class="tiny button white" data-noaction>C</a>
+                            <a href="#" data-note="c#" class="tiny button black" data-noaction>C#</a>
+                            <a href="#" data-note="d" class="tiny button white" data-noaction>D</a>
+                            <a href="#" data-note="d#" class="tiny button black" data-noaction>D#</a>
+                            <a href="#" data-note="e" class="tiny button white" data-noaction>E</a>
+                            <a href="#" data-note="f" class="tiny button white" data-noaction>F</a>
+                            <a href="#" data-note="f#" class="tiny button black" data-noaction>F#</a>
+                            <a href="#" data-note="g" class="tiny button white" data-noaction>G</a>
+                            <a href="#" data-note="g#" class="tiny button black" data-noaction>G#</a>
+                            <a href="#" data-note="a" class="tiny button white" data-noaction>A</a>
+                            <a href="#" data-note="a#" class="tiny button black" data-noaction>A#</a>
+                            <a href="#" data-note="b" class="tiny button white" data-noaction>B</a>
+                            <a href="#" data-note="+c" class="tiny button white" data-noaction>C</a>
+                        </div>
+                        <div class="button-group">
+                            <a href="#" data-note="0" class="tiny button secondary" data-noaction>0: Tick</a>
+                            <a href="#" data-note="1" class="tiny button secondary" data-noaction>1: Tweet</a>
+                            <a href="#" data-note="2" class="tiny button secondary" data-noaction>2: Cowbell</a>
+                            <a href="#" data-note="4" class="tiny button secondary" data-noaction>4: Snare</a>
+                            <a href="#" data-note="5" class="tiny button secondary" data-noaction>5: Woodblock</a>
+                            <a href="#" data-note="6" class="tiny button secondary" data-noaction>6: Low Snare</a>
+                            <a href="#" data-note="7" class="tiny button secondary" data-noaction>7: Tom</a>
+                            <a href="#" data-note="8" class="tiny button secondary" data-noaction>8: Low Woodblock</a>
+                            <a href="#" data-note="9" class="tiny button secondary" data-noaction>9: Bass</a>
+                        </div>
+                        <ul class="commands">
+                            <li><small><strong>T</strong>&nbsp;1/32&nbsp;note</small></li>
+                            <li><small><strong>S</strong>&nbsp;1/16&nbsp;note</small></li>
+                            <li><small><strong>I</strong>&nbsp;1/8&nbsp;note</small></li>
+                            <li><small><strong>Q</strong>&nbsp;1/4&nbsp;note</small></li>
+                            <li><small><strong>H</strong>&nbsp;1/2&nbsp;note</small></li>
+                            <li><small><strong>W</strong>&nbsp;Whole&nbsp;note</small></li>
+                            <li><small><strong>x</strong>&nbsp;Rest</small></li>
+                            <li><small><strong>3</strong>&nbsp;Triplet</small></li>
+                            <li><small><strong>.</strong>&nbsp;Time-and-a-half</small></li>
+                            <li><small><strong>+</strong>&nbsp;Octave&nbsp;up</small></li>
+                            <li><small><strong>-</strong>&nbsp;Octave&nbsp;down</small></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <label>Score A
+                        <textarea rows="5" data-id="score-a">iegb+ed#f#-bagb+egf#ad#if#ebsagf#eid#f#-bagbsasgf#eid#f#q-bi+egb+ece-aigf#ad+c-b+d-gfe+esdc-baib+dg-ga+esd-b+c-ab+d-f#sagba+c-b+dig-a+f#gd-qg</textarea>
+                    </label>
+                    <button type="button" class="button" data-id="play" data-score="score-a">Play</button>
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <label>Score B
+                        <textarea rows="5" data-id="score-b">t+egbegbegbegbegbdf#adf#adf#adf#a-cegcegcegcegbd#f#bd#f#bd#f#bd#f#sbd#f#ibd#f#qbd#f#bx</textarea>
+                    </label>
+                    <button type="button" class="button" data-id="play" data-score="score-b">Play</button>
+                </div>
+            </div>
+
+            <button class="close-button" data-close aria-label="Close reveal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+
+        <div class="row fullWidth">
+
+            <!-- EDIT AREA -->
+            <div id="edit-area" class="small-12 medium-8 columns">
+            </div>
+
+            <!-- TABS -->
+            <div class="small-12 medium-4 columns" id="sidebar">
+
+                <ul class="tabs" data-tabs id="sidebar-tabs">
+                    <li class="tabs-title is-active"><a href="#toolmap" aria-selected="true">Map</a></li>
+                    <li class="tabs-title"><a href="#toolscripts">Scripts</a></li>
+                </ul>
+
+                <div class="tabs-content" data-tabs-content="sidebar-tabs">
+
+                    <!-- Map -->
+                    <div class="tabs-panel is-active" id="toolmap">
+                        <label>
+                            Active Item
+                            <select id="item-selector">
+
+                                <optgroup label="Items">
+                                    <option value="">Nothing</option>
+                                    <option value="Ammo" />Ammo</option>
+                                    <option value="Bomb" />Bomb</option>
+                                    <option value="Boulder" />Boulder</option>
+                                    <option value="Conveyor" />Conveyor</option>
+                                    <option value="Door" />Door</option>
+                                    <option value="Duplicator" />Duplicator</option>
+                                    <option value="Gem" />Gem</option>
+                                    <option value="Heart"/>Heart</option>
+                                    <option value="Key" />Key</option>
+                                    <option value="Passage" />Passage</option>
+                                    <option value="Player">Player</option>
+                                    <option value="Ricochet" />Ricochet</option>
+                                    <option value="Signpost">Signpost</option>
+                                    <option value="SliderEw" />Slider (East/West)</option>
+                                    <option value="SliderNs" />Slider (North/South)</option>
+                                    <option value="Teleporter" />Teleporter</option>
+                                    <option value="Torch" />Torch</option>
+                                </optgroup>
+
+                                <optgroup label="Terrain">
+                                    <option value="BreakableWall" />Breakable Wall</option>
+                                    <option value="FakeWall" />Fake Wall</option>
+                                    <option value="Forest" />Forest</option>
+                                    <option value="GeoFence" />GeoFence</option>
+                                    <option value="InvisibleWall" />Invisible Wall</option>
+                                    <option value="Lava" />Lava</option>
+                                    <option value="LineWall" />Line</option>
+                                    <option value="River" />River</option>
+                                    <option value="SolidWall" />Solid Wall</option>
+                                    <option value="SpiderWeb" />Spider Web</option>
+                                    <option value="Text"/>Text</option>
+                                    <option value="Wall" />Wall</option>
+                                    <option value="Water" />Water</option>
+                                </optgroup>
+
+                                <optgroup label="Creatures">
+                                    <option value="Bear" />Bear</option>
+                                    <option value="Blinker" />Blinker</option>
+                                    <option value="Centipede" />Centipede</option>
+                                    <option value="Lion" />Lion</option>
+                                    <option value="Pusher" />Pusher</option>
+                                    <option value="Ruffian" />Ruffian</option>
+                                    <option value="Scriptable" />Scriptable</option>
+                                    <option value="Snake" />Snake</option>
+                                    <option value="Spider" />Spider</option>
+                                    <option value="SpinningGun" />Spinning Gun</option>
+                                    <option value="Tiger" />Tiger</option>
+                                </optgroup>
+                            </select>
+                        </label>
+
+                        <div id="template-customizer"></div>
+
+                        <label class="advanced">Raw Template
+                            <textarea id="active-template-editor" rows="10" style="width: 100%"></textarea>
+                        </label>
+
+                    </div>
+
+                    <!-- Scripts -->
+                    <div class="tabs-panel" id="toolscripts">
+
+                        <select data-id="selector"></select>
+
+                        <div class="scriptcontainer">
+                            <textarea data-id="editor" rows="30" style="width: 100%"></textarea>
+                        </div>
+
+                        <div data-id="warning" class="script-warning"></div>
+
+                        <button type="button" class="button" data-id="new" data-open="new-script-dialog">New Script</button>
+                        <button type="button" class="button alert" data-id="delete">Delete Script</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="/assets/js/jzt-editor/foundation/what-input.min.js"></script>
+        <script src="/assets/js/jzt-editor/foundation/foundation.min.js"></script>
+        <script type="text/javascript" src="/assets/js/jzt-editor/{{page.version}}/jzt-editor.min.js"></script>
+        <script type="text/javascript">
+
+            (function () {
+
+                $(document).foundation();
+
+                $(document).on('open.zf.reveal', '[data-reveal]', function () {
+                  $(this).find('[autofocus]').focus();
+                });
+
+                jztEditor.initializeEditorUx({
+                    editArea: document.getElementById('edit-area'),
+                    boardSelector: document.getElementById('board-selector'),
+                    boardOptionsDialog: document.getElementById('board-options-dialog'),
+                    worldOptionsDialog: document.getElementById('world-options-dialog'),
+                    openDialog: document.getElementById('open-dialog'),
+                    musicDialog: document.getElementById('music-dialog'),
+                    scriptTab: document.getElementById('toolscripts'),
+                    confirmDeleteBoardDialog: document.getElementById('confirm-delete-board-dialog'),
+                    newScriptDialog: document.getElementById('new-script-dialog'),
+                    newBoardDialog: document.getElementById('new-board-dialog'),
+                    templateEditor: document.getElementById('active-template-editor'),
+                    mainNavigation: document.getElementById('main-navigation'),
+                    scriptButton: document.getElementById('script-button'),
+                    itemSelector: document.getElementById('item-selector'),
+                    modeSelector: document.getElementById('mode-selector'),
+                    playButton: document.getElementById('play'),
+                    foundation: $(document)
+                });
+            })();
+
+        </script>
+
+    </body>
+</html>

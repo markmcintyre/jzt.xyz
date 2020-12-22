@@ -1,0 +1,23 @@
+- q: What browsers does JZT support?
+  a: >
+     JZT should run on the latest versions of Chrome, Firefox, Safari, and Internet Explorer. However, sound will not play
+     in Internet Explorer or iOS Safari, and Safari for the desktop doesn't allow you to press certain keyboard keys
+     while playing in full screen mode.
+
+- q: When will the game world editor be ready?
+  a: >
+     If you define ready as being capable of creating game worlds, then it's ready now.
+     But it's not particularly user-friendly at the moment, and it's important that the game engine be thoroughly tested
+     and debugged before opening it up to more worlds, so it's not yet available online.
+
+- q: Why does/doesn't JZT have some esoteric feature that ZZT did/didn't?
+  a: >
+     My goal wasn't to recreate ZZT faithfully, since DOS emulators already fill that need.
+     My goal with this project was to try out new web technologies, so I didn't add things that I didn't
+     find interesting, and I added things that I thought would be fun to try.
+
+- q: Est-ce qu'il y aura une version française de JZT ?
+  a: >
+     Oui, absolument ! C'est pour moi une priorité importante. Le moteur de jeu prend déjà en charge
+     plusieurs langues, mais pour le moment je n'ai pas assez de temps pour traduire « The Village of JZT »
+     et ce site en français. Ça va arriver très bientôt.

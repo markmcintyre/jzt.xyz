@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="page row">
+    <div class="small-12 columns">
+        <h1>{{ page.title }}</h1>
+        <small>{{ page.date | date: "%b %-d, %Y" }}</small>
+
+        {{ content }}
+
+        {% if page.previous %}
+            <a href="{{ page.previous.url }}">Previous Post</a>
+        {% endif %}
+
+        {% if page.next %}
+            <a href="{{ page.next.url }}">Next Post</a>
+        {% endif %}
+    </div>
+</div>
+

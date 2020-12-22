@@ -1,0 +1,287 @@
+@font-face {
+    font-family: 'opensans-light';
+    src: url('../font/opensans-light.woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+aside.row {
+    max-width: 800px;
+}
+
+.page.row,
+.game.row {
+    margin-top: 1em;
+}
+
+.row {
+    margin-bottom: 1em;
+}
+
+body {
+    font-family: opensans-light, sans-serif;
+    background-color: #555;
+    color: white;
+    font-size: 12pt;
+    line-height: 200%;
+}
+
+pre {
+    border: 1px solid #444;
+    background-color: #4A4A4A;
+    color: silver;
+    margin: 1em 2em;
+    padding: 1em;
+}
+
+dl {
+    margin-left: 2em;
+
+    dt {
+        font-weight: bold
+    }
+
+}
+
+a {
+    text-decoration: none;
+    color: silver;
+
+    &:hover, &:active {
+        text-decoration: underline;
+        color: white;
+    }
+
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2em 0;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+#unsupported-browser {
+    display: none;
+}
+
+img[alt~="avatar"] {
+    border-radius: 200px;
+    float: left;
+    margin: 0 1em 1em 0;
+}
+img[alt="large avatar"] {
+    width: 64px;
+    height: 64px;
+}
+
+.warning {
+    margin: 20px auto;
+    border-radius: 100px;
+    background-color: #777;
+    color: black;
+    padding: 10px 20px;
+    font-size: 18pt;
+    vertical-align: middle;
+
+    span {
+        font-size: 24pt;
+        color: yellow;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+}
+
+.button {
+    padding: 10px 40px;
+    background-color: #524bfd;
+    color: white;
+    &:hover {
+        text-decoration: none;
+        background-color: #7064ff;
+    }
+    &.small {
+        font-size: 10pt;
+        padding: 5px 20px;
+    }
+}
+
+header {
+
+    background-color: white;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    position: relative;
+    z-index: 99;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+
+    wrapper {
+        max-width: 62.5rem;
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-weight: bold;
+        font-size: 20px;
+        padding: 0;
+        margin: 0;
+        color: black;
+        display: inline;
+
+        a {
+            opacity: .5;
+            transition: opacity .5s;
+            padding-left: 40px;
+            background-image: url(../img/jzt.svg);
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            background-size: 16px 20px;
+            display: inline-block;
+            line-height: 40px;
+            text-decoration: none;
+            color: #555;
+
+            &:hover {
+                opacity: 1;
+                text-decoration: none;
+                color: #555;
+            }
+
+        }
+
+    }
+
+    h2 {
+        display: none;
+    }
+
+    nav {
+        float: right;
+        text-align: right;
+        color: #888;
+        display: inline;
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline;
+        }
+
+        li {
+            padding: 0 0 0 2em;
+            margin: 0;
+            display: inline;
+            font-weight: bold;
+
+            a {
+                color: #555;
+                opacity: .5;
+
+                &:hover {
+                    color: #555;
+                    opacity: 1;
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+    }
+
+
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    line-height: 150%;
+}
+
+ul.no-bullet {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    line-height: 100%;
+
+    li {
+        margin-bottom: 1em;
+    }
+
+}
+
+h2 {
+    clear: both;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+small {
+    font-size: 8pt;
+    color: #777;
+}
+
+aside {
+    background-color: #4A4A4A;
+}
+
+section {
+
+    padding: 20px;
+
+    h2 {margin-bottom: .5em;}
+
+}
+
+footer {
+
+    color: white;
+    background-color: #5A5A5A;
+    margin: 0;
+    padding: 0;
+
+    p {
+        font-size: 8pt;
+        text-align: right;
+    }
+
+    a {color: #888;}
+
+    .row {
+        margin-bottom: 0;
+    }
+
+}
+
+span.clear {
+    clear: both;
+}
+
+.social-share {
+
+    padding: 5px 10px;
+    color: white;
+    display: block;
+    width: 120px;
+    margin-bottom: 5px;
+
+    &.facebook   {background-color: #306199;}
+    &.twitter    {background-color: #26c4f1;}
+    &.googleplus {background-color: #e93f2e;}
+
+}

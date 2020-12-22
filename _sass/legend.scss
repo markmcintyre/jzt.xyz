@@ -1,0 +1,53 @@
+section.legend {
+
+    ul, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    span.symbol {
+
+        display: inline-block;
+        background-image: url(/assets/img/legend.png);
+        background-repeat: no-repeat;
+        background-size: 144px 128px;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+        padding: 30px 0 0 16px;
+        margin: 0 5px 3px 0;
+        vertical-align: middle;
+
+        &.ammo {background-position: 0 0;}
+        &.gem  {background-position: -16px 0;}
+        &.torch {background-position: -32px 0;}
+        &.key {background-position: -48px 0;}
+
+        &.passage {background-position: 0 -32px;}
+        &.locked-door {background-position: -16px -32px;}
+        &.bomb {background-position: -32px -32px;}
+        &.conveyor {background-position: -48px -32px;}
+        &.teleporter {background-position: -64px -32px;}
+        &.duplicator {background-position: -80px -32px;}
+        &.boulder {background-position: -96px -32px;}
+        &.slider {background-position: -112px -32px;}
+        &.ricochet {background-position: -128px -32px;}
+
+        &.lion {background-position: 0 -64px;}
+        &.tiger {background-position: -16px -64px;}
+        &.bear {background-position: -32px -64px;}
+        &.ruffian {background-position: -96px -64px;}
+        &.centipede {background-position: -48px -64px;}
+        &.snake {background-position: -64px -64px;}
+        &.spider {background-position: -80px -64px;}
+
+        &.wall {background-position: 0 -92px;}
+        &.breakable-wall {background-position: -16px -92px;}
+        &.water {background-position: -32px -92px;}
+        &.river {background-position: -48px -92px;}
+        &.forest {background-position: -64px -92px;}
+
+    }
+
+}

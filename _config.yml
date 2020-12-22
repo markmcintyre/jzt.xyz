@@ -1,0 +1,40 @@
+# Site settings
+cleanurls: true
+title: JZT
+tagline: A Nostalgic Adventure Game
+description: >
+    JZT is an homage to ZZT, a DOS-era adventure game, playable right from within your web browser.
+    Like its inspiration, JZT is also a game creation platform that will allow anyone to create and share JZT game worlds.
+baseurl: ""
+url: "https://jzt.xyz"
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+collections:
+  worlds:
+    output: true
+
+defaults:
+- scope:
+    type: worlds
+  values:
+    layout: world
+- scope:
+    type: posts
+  values:
+    layout: post
+- scope:
+    path: ''
+  values:
+    version: '1.0.45'
+
+# Exclude our snapshots from production
+exclude:
+- assets/**/snapshot
+
+# Build settings
+markdown: kramdown
+
+permalink: /news/:title

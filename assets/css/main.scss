@@ -1,0 +1,48 @@
+---
+# Imports SASS partials
+---
+
+// Imports
+@import 'foundation';
+@import 'main';
+@import 'feature';
+@import 'game-support';
+@import 'keyboard';
+@import 'legend';
+
+// Beta ribbon styles
+.ribbon-wrapper {
+    position: absolute;
+    overflow: hidden;
+    top: 50px;
+    right: 0;
+    width: 100px;
+    height: 100px;
+
+    .ribbon {
+
+        background-color: #ff534f;
+        white-space: nowrap;
+        position: absolute;
+        width: 100%;
+        top: 5px;
+        right: -30px;
+        line-height: 150%;
+
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+
+        span {
+            color: white;
+            border: 1px dashed white;
+            display: block;
+            margin: 2px 0;
+            text-align: center;
+        }
+
+    }
+
+}

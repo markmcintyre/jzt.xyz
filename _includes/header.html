@@ -1,0 +1,18 @@
+<header>
+
+    <div class="wrapper row">
+        <div class="large-12 columns">
+            <h1><a href="/">{{site.title}}</a></h1>
+            <h2>{{site.tagline}}</h2>
+
+            <nav>
+                <ul>
+                    {% for link in site.data.navigation %}
+                    <li><a href="{{link.url}}">{{link.text}}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</header>

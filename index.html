@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div id="feature">
+    <div class="row">
+        <div class="small-12 medium-4 columns">
+            <a href="/worlds/village-of-jzt"><img src="/assets/img/village-of-jzt.png" width="250" height="200" /></a>
+        </div>
+        <div class="small-12 medium-8 columns">
+            <h1>The Village of JZT</h1>
+            <p>Embark on a strange, nostalgic adventure. Find the five purple keys to unlock the mysterious Palace of JZT and claim the treasure.</p>
+            <a href="/worlds/village-of-jzt" class="button">Play online</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div id="content" class="small-12 medium-4 columns">
+        <h2>Beyond the village</h2>
+        <p>New JZT worlds coming soon:</p>
+        <ul>
+            <li>The Mines of JZT</li>
+            <li>The Metropolis of JZT</li>
+        </ul>
+    </div>
+    <div id="content" class="small-12 medium-4 columns">
+        <h2>Create your own worlds</h2>
+        <p>The JZT world editor lets you create and share your own JZT games. Arrange your game boards,
+        add items and enemies, and program your own interactions with JZTScript, an easy-to-learn scripting language.</p>
+        <a href="/editor" class="button small">Create Game Online (Beta)</a>
+    </div>
+    <div id="content" class="small-12 medium-4 columns">
+        <h2>Hot off the presses</h2>
+
+        <ul class="no-bullet">
+        {% for post in site.posts offset: 0 limit: 10  %}
+            <li><a href="{{post.url}}">{{post.title}}</a><br/><small>{{ post.date | date_to_string }}</small></li>
+        {% endfor %}
+        </ul>
+
+    </div>
+</div>
