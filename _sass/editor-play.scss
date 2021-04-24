@@ -2,16 +2,27 @@ body {
     background-color: #555;
 }
 
-canvas {
-    display: block;
-    width: 800px;
-    height: 600px;
-    margin: 2em auto;
-}
+#game-area {
 
-canvas.loading {
-    background-image: url(/assets/img/rings.svg);
-    background-position: center;
-    background-size: 50px;
-    background-repeat: no-repeat;
+    background-color: #555;
+    width: 800px;
+    height: 640px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+    button {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-size: 12pt;
+        font-family: monospace;
+        border: none;
+    }
+
+    canvas {
+        height: 100%;
+    }
+
 }

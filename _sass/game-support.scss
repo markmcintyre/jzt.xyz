@@ -22,6 +22,63 @@
   justify-content: center;
 }
 
+#settings-bar {
+
+    background-color: #1A1A1A;
+    width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: right;
+    overflow: hidden;
+    max-height: 60px;
+    transition: max-height 1s ease-in;
+
+    &.inactive {
+        max-height: 0;
+        transition: max-height 1s ease-out;
+    }
+
+    .button {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        margin: 1ex;
+        overflow: hidden;
+        background: transparent;
+
+        &.active {
+            svg .strike {
+                fill: tomato;
+            }
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+
+            path, polygon {
+                stroke: AAA;
+                fill: AAA;
+            }
+
+            &:hover {
+
+                path, polygon {
+                    stroke: white;
+                    fill: white;
+                }
+
+                cursor: pointer;
+
+            }
+
+        }
+
+    }
+
+}
+
 #game-area {
 
     background-color: #555;
@@ -30,6 +87,16 @@
     position: relative;
     overflow: hidden;
     margin: 0 auto;
+
+    button {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        color: white;
+        font-size: 12pt;
+        font-family: monospace;
+        border: none;
+    }
 
     canvas {
         height: 100%;

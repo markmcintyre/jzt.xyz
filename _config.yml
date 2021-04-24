@@ -1,4 +1,5 @@
 # Site settings
+production: true
 cleanurls: true
 title: JZT
 tagline: A Nostalgic Adventure Game
@@ -7,6 +8,9 @@ description: >
     Like its inspiration, JZT is also a game creation platform that will allow anyone to create and share JZT game worlds.
 baseurl: ""
 url: "https://jzt.xyz"
+
+include:
+- .htaccess
 
 sass:
     sass_dir: _sass
@@ -28,7 +32,7 @@ defaults:
 - scope:
     path: ''
   values:
-    version: '1.0.45'
+    version: '1.0.55'
 
 # Exclude our snapshots from production
 exclude:
@@ -37,4 +41,4 @@ exclude:
 # Build settings
 markdown: kramdown
 
-permalink: /news/:title
+permalink: /blog/:title
