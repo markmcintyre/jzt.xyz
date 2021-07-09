@@ -28,8 +28,11 @@
             <canvas id="jzt" width="800" height="640"></canvas>
         </div>
         
-        <script type="text/javascript" src="/assets/js/jzt/{{page.version}}/jzt.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="/assets/js/jzt-editor/{{page.version}}/jzt-editor-play.min.js" charset="utf-8"></script>
+        {% for jsfile in site.static_files %}
+            {% if jsfile.name contains "jzt-editor-play.min" or jsfile.name contains "jzt.min" %}
+                <script type="text/javascript" src="{{jsfile.path}}" charset="utf-8"></script>
+            {% endif %}
+        {% endfor %}
 
     </body>
 </html>

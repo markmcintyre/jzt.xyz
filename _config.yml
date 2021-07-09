@@ -9,9 +9,6 @@ description: >
 baseurl: ""
 url: "https://jzt.xyz"
 
-include:
-- .htaccess
-
 sass:
     sass_dir: _sass
     style: compressed
@@ -29,14 +26,6 @@ defaults:
     type: posts
   values:
     layout: post
-- scope:
-    path: ''
-  values:
-    version: '1.0.55'
-
-# Exclude our snapshots from production
-exclude:
-- assets/**/snapshot
 
 # Build settings
 markdown: kramdown

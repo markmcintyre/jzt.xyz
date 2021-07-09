@@ -490,9 +490,13 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="/assets/js/jzt-editor/foundation/what-input.min.js"></script>
-        <script src="/assets/js/jzt-editor/foundation/foundation.min.js"></script>
-        <script type="text/javascript" src="/assets/js/jzt-editor/{{page.version}}/jzt-editor.min.js"></script>
+        <script src="/assets/js/foundation/what-input.min.js"></script>
+        <script src="/assets/js/foundation/foundation.min.js"></script>
+        {% for jsfile in site.static_files %}
+            {% if jsfile.name contains "jzt-editor.min" %}
+                <script type="text/javascript" src="{{jsfile.path}}" charset="utf-8"></script>
+            {% endif %}
+        {% endfor %}
         <script type="text/javascript">
 
             (function () {
