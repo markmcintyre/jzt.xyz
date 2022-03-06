@@ -7,18 +7,16 @@ layout: page
 About JZT
 ---------
 
-JZT is an homage to [ZZT][1], a DOS-era adventure game created in 1991 by Tim Sweeney of Epic Megagames.
-Like its inspiration, JZT is also a game creation platform that will allow anyone to create and share JZT game worlds.
-The JZT game world editor will be available shortly.
+JZT is a <del>ripoff of</del> uh, I mean a <em>heavily-inspired homage</em> to [ZZT][1], a DOS-era adventure game created in 1991 by the legendary Tim Sweeney of Epic Megagames.
+
+Like its inspiration, JZT is also a game creation platform that lets anyone to create their own JZT worlds. Unlike its inspiration, it runs in a web browser so you don't have to download or install anything. Neat!
 
 About Mark
 ---------------
 
 ![large avatar][2]
 
-My name is Mark, and I'm a software engineer living in Montréal, Canada. I started working on JZT in
-February, 2013 as a way to get some hands-on experience with some of the great new web technologies.
-That this experiment turned into a releaseable game was a nice surprise.
+My name is Mark, and I'm a computer scientist and tinkerer living in Montréal, Canada.
 
 Frequently Asked Questions
 --------------------------
@@ -31,4 +29,4 @@ Frequently Asked Questions
 </dl>
 
 [1]: http://en.wikipedia.org/wiki/ZZT                                          "ZZT on Wikipedia"
-[2]: http://www.gravatar.com/avatar/1a7de25727bab5a165105a633e69147d.png?s=200 "Mark"
+[2]: /assets/img/avatar.jpg                 "Hi."

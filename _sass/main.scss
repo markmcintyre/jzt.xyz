@@ -1,9 +1,29 @@
 @font-face {
-    font-family: 'opensans-light';
-    src: url('../font/opensans-light.woff');
-    font-weight: normal;
+    font-family: 'Open Sans';
     font-style: normal;
-}
+    font-weight: 300;
+    src: local(''),
+         url('../font/open-sans-v27-latin-300.woff2') format('woff2'),
+         url('../font/open-sans-v27-latin-300.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: local(''),
+         url('../font/open-sans-v27-latin-600.woff2') format('woff2'),
+         url('../font/open-sans-v27-latin-600.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 800;
+    src: local(''),
+         url('../font/open-sans-v27-latin-800.woff2') format('woff2'),
+         url('../font/open-sans-v27-latin-800.woff') format('woff');
+  }
 
 aside.row {
     max-width: 800px;
@@ -19,8 +39,8 @@ aside.row {
 }
 
 body {
-    font-family: opensans-light, sans-serif;
-    background-color: #555;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #4A4A4A;
     color: white;
     font-size: 12pt;
     line-height: 200%;
@@ -38,7 +58,12 @@ dl {
     margin-left: 2em;
 
     dt {
-        font-weight: bold
+        font-weight: 600;
+    }
+
+    dd {
+        margin-bottom: 2em;
+        margin-left: 0;
     }
 
 }
@@ -63,6 +88,11 @@ hr {
 
 p {
     margin-bottom: 1.5em;
+
+    strong {
+        font-weight: 600;
+    }
+
 }
 
 #unsupported-browser {
@@ -100,11 +130,15 @@ img[alt="large avatar"] {
 
 .button {
     padding: 10px 40px;
-    background-color: #524bfd;
+    border-radius: 3px;
+    box-shadow: .2em .2em 1em rgba(0, 0, 0, 0.25);
+    background-color: rgb(85, 85, 255);
+    border: 2px solid rgb(85, 85, 255);
     color: white;
+    font-weight: 800;
     &:hover {
         text-decoration: none;
-        background-color: #7064ff;
+        border: 2px solid white;
     }
     &.small {
         font-size: 10pt;
@@ -128,7 +162,7 @@ header {
     }
 
     h1 {
-        font-weight: bold;
+        font-weight: bolder;
         font-size: 20px;
         padding: 0;
         margin: 0;
@@ -160,6 +194,7 @@ header {
 
     h2 {
         display: none;
+        font-weight: 600;
     }
 
     nav {
@@ -182,7 +217,7 @@ header {
             padding: 0 0 0 2em;
             margin: 0;
             display: inline;
-            font-weight: bold;
+            font-weight: 600;
 
             a {
                 color: #555;
@@ -192,6 +227,10 @@ header {
                     color: #555;
                     opacity: 1;
                     text-decoration: none;
+                }
+
+                img {
+                    width: 1em;
                 }
 
             }
@@ -204,10 +243,10 @@ header {
 }
 
 h1, h2, h3 {
-    font-weight: normal;
     margin: 0;
     padding: 0;
     line-height: 150%;
+    font-weight: 600;
 }
 
 ul.no-bullet {
@@ -244,7 +283,14 @@ section {
 
     padding: 20px;
 
-    h2 {margin-bottom: .5em;}
+    h2 {
+        margin-bottom: .5em;
+        font-weight: 800;
+    }
+
+    h3 {
+        font-weight: 600;
+    }
 
 }
 

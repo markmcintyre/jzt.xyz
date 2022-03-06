@@ -3,7 +3,7 @@
 
     {% include head.html %}
 
-    <body>
+    <body{%if layout.pageclass %} class="{{layout.pageclass}}"{% endif %}>
 
         {% include header.html %}
 

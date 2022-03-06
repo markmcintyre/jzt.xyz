@@ -3,4 +3,8 @@
 - text: News
   url: /news/
 - text: Facebook
+  icon: /assets/img/facebook.svg
   url: https://www.facebook.com/jzt.community
+- text: Twitter
+  icon: /assets/img/twitter.svg
+  url: https://www.twitter.com/ItsMarkMcIntyre

@@ -5,12 +5,12 @@ layout: default
 <div id="feature">
     <div class="row">
         <div class="small-12 medium-4 columns">
-            <a href="/worlds/village-of-jzt"><img src="/assets/img/village-of-jzt.png" width="250" height="200" /></a>
+            <a href="/worlds/village-of-jzt"><img src="/assets/img/village-of-jzt.png"/></a>
         </div>
-        <div class="small-12 medium-8 columns">
+        <div class="small-12 medium-8 columns primary">
             <h1>The Village of JZT</h1>
-            <p>Embark on a strange, nostalgic adventure. Find the five purple keys to unlock the mysterious Palace of JZT and claim the treasure.</p>
-            <a href="/worlds/village-of-jzt" class="button">Play online</a>
+            <p>Embark on a <strong>DOS-era adventure</strong> right in your web browser! Features eye-straining 16-colour ANSI graphics, toe-curling PC-speaker sound, and absolutely no modern bells or whistles! Do you have what it takes to find the fabled treasure? Probably!</p>
+            <a href="/worlds/village-of-jzt" class="button">Play JZT online</a>
         </div>
     </div>
 </div>
@@ -18,24 +18,21 @@ layout: default
 <div class="row">
 
     <div id="content" class="small-12 medium-4 columns">
-        <h2>Beyond the village</h2>
-        <p>New JZT worlds coming soon:</p>
-        <ul>
-            <li>The Mines of JZT</li>
-            <li>The Metropolis of JZT</li>
-        </ul>
+        <h2>It's totally free</h2>
+        <p>Free to play, no ads, no personal data collection. This whole thing is just a hobby!</p>
+        <p>Heck, I'll open-source it if there's interest.</p>
     </div>
     <div id="content" class="small-12 medium-4 columns">
+        <!--<h2>And that's not all</h2>
+        <p>Also play <a href="/worlds/village-of-jzt">The Village of JZT</a>, the JZT adventure that <strong>barely</strong> started it all!</p>-->
         <h2>Create your own worlds</h2>
-        <p>The JZT world editor lets you create and share your own JZT games. Arrange your game boards,
-        add items and enemies, and program your own interactions with JZTScript, an easy-to-learn scripting language.</p>
-        <a href="/editor" class="button small">Create Game Online (Beta)</a>
+        <p>Use the janky <a href="/editor">JZT Game World Editor</a> to create your own JZT adventures!</p>
     </div>
     <div id="content" class="small-12 medium-4 columns">
-        <h2>Hot off the presses</h2>
+        <h2>What's New?</h2>
 
         <ul class="no-bullet">
-        {% for post in site.posts offset: 0 limit: 10  %}
+        {% for post in site.posts offset: 0 limit: 3  %}
             <li><a href="{{post.url}}">{{post.title}}</a><br/><small>{{ post.date | date_to_string }}</small></li>
         {% endfor %}
         </ul>

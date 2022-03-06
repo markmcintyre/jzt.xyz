@@ -1,9 +1,40 @@
 #feature {
 
     background-color: #777;
-    background: repeating-radial-gradient(circle, #555, #555 20px, #5A5A5A 20px, #5A5A5A 40px);
-    padding: 2em;
-    margin-bottom: 2em;
+    background: repeating-radial-gradient(circle, #555, #555 30px, #5A5A5A 30px, #5A5A5A 60px);
+    padding: 4em 0;
+    margin-bottom: 4em;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    
+    h1 {
+        font-size: 2.2em;
+        font-weight: bolder;
+    }
+
+    p, a {
+        font-size: 1.3em;
+        font-weight: normal;
+
+        strong {
+            font-weight: 800;
+        }
+
+        &.button {
+            font-weight: 800;
+        }
+
+    }
+
+    img {
+        background-color: black;
+        border-radius: 3px;
+        box-shadow: .5em .5em 1em rgba(0,0,0,0.25);
+        padding: 1em;
+    }
+
+    .primary {
+        padding: 0 3em;
+    }
 
 }
 
