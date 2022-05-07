@@ -93,7 +93,7 @@ body.world {
     overflow: hidden;
     margin: 0 auto;
 
-    button {
+    button.start {
         height: 100%;
         width: 100%;
         background-color: black;
@@ -128,8 +128,32 @@ body.world {
         }
 
         .social-share {
-            display: inline-block;
-            width: auto;
+            display: inline-flex;
+            padding: 10px 25px;
+            border: none;
+            vertical-align: middle;
+            align-items: center;
+            justify-items: center;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            color: white;
+            background-color: blue;
+            svg {
+                margin-left: .5em;
+            }
+        }
+        
+        .clipboard {
+            opacity: 0;
+            transition: opacity .5s ease-out;
+            font-weight: bold;
+            margin-left: 1em;
+        }
+
+        .clipboard.active {
+            opacity: 1;
         }
 
     }
