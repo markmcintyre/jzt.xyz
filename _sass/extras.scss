@@ -15,12 +15,16 @@ ul.news {
 }
 
 dl {
-    margin-left: 2em;
+    margin: 0;
     dt {
         font-weight: 600;
     }
     dd {
+        margin: 0;
         margin: 0 0 2em 0;
+    }
+    @include medium-up {
+        margin-left: 2em;
     }
 }
 
@@ -32,6 +36,7 @@ figure.left {
     img {
         border-radius: 200px;
         width: 64px;
+        height: 64px;
         margin-right: 1em;
     }
 }

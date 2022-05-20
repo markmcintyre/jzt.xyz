@@ -1,6 +1,6 @@
 #feature {
 
-    padding: 4em 0;
+    padding: 2em 0;
     background-color: #777;
     background: repeating-radial-gradient(circle, #555, #555 30px, #5A5A5A 30px, #5A5A5A 60px);
     box-shadow: 0 2px 3px rgba(0,0,0,0.25);
@@ -14,16 +14,21 @@
     justify-content: center;
     box-sizing: border-box;
 
+    @include medium-up {
+        padding: 4em 0;
+    }
+
     section {
         padding: 0 1em;
         display: flex;
         flex-direction: column;
-        gap: 4em;
+        gap: 2em;
         width: 100%;
         box-sizing: border-box;
 
         @include medium-up {
             flex-direction: row;
+            gap: 4em;
         }
 
         @include large {
@@ -78,13 +83,14 @@
 
 .homepage {
 
-    margin: 4em 0;
+    margin: 2em 0;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
     row-gap: 2em;
 
     @include medium-up {
+        margin: 4em 0;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 1fr;
         column-gap: 4em;
