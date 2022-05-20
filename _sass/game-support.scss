@@ -1,38 +1,16 @@
-:-webkit-full-screen {
+.game {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-:-moz-full-screen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-:-ms-fullscreen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-:fullscreen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-body.world {
-    background-color: #555;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 2em auto 0 auto;
 }
 
 #settings-bar {
 
+    display: flex;
+    justify-content: end;
     background-color: #1A1A1A;
-    width: 800px;
-    margin: 0 auto;
-    padding: 0;
-    text-align: right;
+    width: 100%;
     overflow: hidden;
     max-height: 60px;
     transition: max-height 1s ease-in;
@@ -43,14 +21,9 @@ body.world {
     }
 
     .button {
-        display: inline-block;
         width: 24px;
         height: 24px;
-        padding: 0;
-        margin: 1ex;
-        border: none;
-        overflow: hidden;
-        background: transparent;
+        margin: 1em;
 
         &.active {
             svg .strike {
@@ -87,16 +60,13 @@ body.world {
 #game-area {
 
     background-color: #555;
-    width: 800px;
-    height: 640px;
-    position: relative;
-    margin: 0 auto;
 
     .start {
         display: flex;
-        width: 800px;
-        height: 640px;
-        background-color: black;
+        aspect-ratio: 5/4;
+        object-fit: contain;
+        background: #1A1A1A;
+        background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(69,69,69,1) 100%);
         color: white;
         font-size: 12pt;
         font-family: monospace;
@@ -129,9 +99,14 @@ body.world {
     }
 
     canvas {
+        aspect-ratio: 5/4;
         object-fit: contain;
         width: 100%;
         height: 100%;
+        display: none;
+        &.active {
+            display: block;
+        }
     }
 
     .alert {
@@ -200,4 +175,39 @@ body.world {
         visibility: visible;
     }
 
+}
+
+.supplement {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 0;
+    row-gap: 2em;
+
+    h2 {
+        margin-top: 0;
+    }
+    
+    section {
+
+        &.legend {
+
+            @include medium-up {
+                display: grid;
+                grid-template-rows: auto 1fr;
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            h2 {
+                grid-column: 1/-1;
+            }
+
+        }
+
+        background-color: #555;
+        padding: 2em;
+        border-radius: 1em;
+        section {
+            padding: 0;
+        }
+    }
 }

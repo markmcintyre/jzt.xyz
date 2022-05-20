@@ -5,7 +5,7 @@ description: "Announcements and reflections from the author of JZT, an online ad
 ---
 
 <h1>JZT News</h1>
-<ul class="no-bullet">
+<ul class="news">
 {% for post in site.posts %}
     <li><a href="{{ post.url }}">{{ post.title }}</a><br/><small>{{ post.date | date_to_string }}</small></li>
 {% endfor %}

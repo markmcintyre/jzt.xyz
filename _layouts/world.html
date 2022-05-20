@@ -3,16 +3,11 @@ layout: default
 pageclass: world
 ---
 
-<div class="game row">
-    {% include game/canvas.html %}
-</div>
-
-<aside class="row">
-    {% include game/instructions.html %}
-</aside>
-
-<aside class="row">
-    {% include game/legend.html %}
-</aside>
-
+<section class="game">
+{% include game/canvas.html %}
+</section>
+<section class="supplement">
+{% include game/instructions.html %}
+{% include game/legend.html %}
 {% include game/script.html %}
+</section>

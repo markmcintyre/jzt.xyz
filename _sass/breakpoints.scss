@@ -1,0 +1,35 @@
+$tablet-min: 960px;
+$desktop-min: 1024px;
+$mobile-max: 959px;
+$tablet-max: 1023px;
+
+// Device Definitions
+@mixin small {
+    @media screen and (max-width: #{$mobile-max}) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and (min-width: #{$tablet-min}) and (max-width: #{$tablet-max}) {
+        @content;
+    }
+}
+
+@mixin medium-down {
+    @media screen and (max-width: #{$tablet-max}) {
+        @content;
+    }
+}
+  
+@mixin medium-up {
+    @media screen and (min-width: #{$tablet-min}) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media screen and (min-width: #{$desktop-min}) {
+        @content;
+    }
+}

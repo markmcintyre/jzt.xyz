@@ -3,39 +3,38 @@ layout: default
 ---
 
 <div id="feature">
-    <div class="row">
-        <div class="small-12 medium-4 columns">
-            <a href="/worlds/mines-of-jzt"><img src="/assets/img/mines-of-jzt.png"/></a>
-        </div>
-        <div class="small-12 medium-8 columns primary">
+    <section>
+        <a href="/worlds/mines-of-jzt">
+            <img src="/assets/img/mines-of-jzt.png"/>
+        </a>
+        <div class="primary">
             <h1>The Mines of JZT</h1>
             <p>Embark on a <strong>DOS-era adventure</strong> right in your web browser! Features eye-straining 16-colour ANSI graphics, toe-curling PC-speaker sound, and absolutely no modern bells or whistles! Do you have what it takes to find the fabled treasure? Probably!</p>
             <a href="/worlds/mines-of-jzt" class="button">Play JZT online</a>
         </div>
-    </div>
+    </section>
 </div>
 
-<div class="row">
-
-    <div id="content" class="small-12 medium-4 columns">
+<div class="homepage">
+    <section>
         <h2>It's totally free</h2>
         <p>Free to play, no ads, no personal data collection. This whole thing is just a hobby!</p>
         <p>Heck, I'll open-source it if there's interest.</p>
-    </div>
-    <div id="content" class="small-12 medium-4 columns">
+    </section>
+    <section>
         <h2>And that's not all</h2>
         <p>Also play <a href="/worlds/village-of-jzt">The Village of JZT</a>, the JZT adventure that <strong>barely</strong> started it all!</p>
         <h2>Create your own worlds</h2>
         <p>Use the janky <a href="/editor">JZT Game World Editor</a> to create your own JZT adventures!</p>
-    </div>
-    <div id="content" class="small-12 medium-4 columns">
+    </section>
+    <section>
         <h2>What's New?</h2>
 
-        <ul class="no-bullet">
+        <ul class="news">
         {% for post in site.posts offset: 0 limit: 3  %}
             <li><a href="{{post.url}}">{{post.title}}</a><br/><small>{{ post.date | date_to_string }}</small></li>
         {% endfor %}
         </ul>
 
-    </div>
+    </section>
 </div>

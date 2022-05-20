@@ -3,9 +3,12 @@
 ---
 
 // Imports
-@import 'foundation';
+@import 'breakpoints';
 @import 'main';
+@import 'header';
+@import 'footer';
 @import 'feature';
 @import 'game-support';
 @import 'keyboard';
 @import 'legend';
+@import 'extras';
