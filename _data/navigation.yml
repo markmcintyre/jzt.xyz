@@ -5,6 +5,7 @@
 - text: Facebook
   icon: /assets/img/facebook.svg
   url: https://www.facebook.com/jzt.community
-- text: Twitter
-  icon: /assets/img/twitter.svg
-  url: https://www.twitter.com/ItsMarkMcIntyre
+- text: Mastodon
+  icon: /assets/img/mastodon.svg
+  rel: me
+  url: https://mstdn.ca/@markmcintyre

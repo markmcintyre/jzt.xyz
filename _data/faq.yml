@@ -11,7 +11,7 @@
   a: Because it's not a re-creation of ZZT, just a heavily-inspired-by thing I made. It has a bunch of stuff that ZZT didn't, and doesn't have some stuff that ZZT did. If you want a 100% faithful ZZT experience, check out [asie's](https://twitter.com/cbrzeszczot) amazing [decompilation efforts](https://github.com/asiekierka/reconstruction-of-zzt).
 
 - q: You should add X or fix Y!
-  a: Yeah, I probably should! For some context, though, I started this project in **2013** so that's how fast I go. Still, drop me a line on the [Tweeter](https://twitter.com/itsmarkmcintyre); slow doesn't mean abandoned!
+  a: Yeah, I probably should! For some context, though, I started this project in **2013** so that's how fast I go. Still, drop me a line on [Mastodon](https://mstdn.ca/@markmcintyre) if you've got a bug report or feature request; slow doesn't mean abandoned!
 
 - q: Is JZT open source?
-  a: If there's interest in it, sure! The only reason it's not already on GitHub is because I'd need to remove some local environment-specific build stuff from the code and I haven't heard from anyone who wants to contribute, so I haven't gotten around to it yet.
+  a: Sure is! Check it out on [GitHub](https://github.com/markmcintyre/jzt).

@@ -15,7 +15,7 @@ About Mark
 ==========
 <figure class="left">
     <img src="/assets/img/avatar.jpg" alt="avatar" />
-    <figcaption>Hi. 👋🏻<br/>My name is Mark. I'm a computer scientist and tinkerer living in Montréal, Canada.</figcaption>
+    <figcaption>Hey there! 👋🏻<br/>My name is Mark. I'm a computer scientist and tinkerer living in Montréal, Canada. You can reach me on <a rel="me" href="https://mstdn.ca/@markmcintyre">Mastodon</a>.</figcaption>
 </figure>
 
 Frequently Asked Questions
